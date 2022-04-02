@@ -1,3 +1,5 @@
+const Otter = require("../models/otterModel");
+
 /** Vancouver ******************************* */
 const getVancouver = (req, res) => {
     res.status(200).send("see vanaqua");
