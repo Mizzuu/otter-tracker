@@ -6,7 +6,18 @@ const getVancouver = (req, res) => {
 };
 
 const postVancouver = (req, res) => {
-    res.status(200).send("post vanaqua");
+    let vancouver = new Otter(req.body);
+    vancouver
+        .save()
+        .then((result) => {
+            res.status(200).json({
+                data: vancouver,
+                url: "api/otters/vancouver",
+            });
+        })
+        .catch((error) => {
+            res.status(500).send(error);
+        });
 };
 /******************************************** */
 
