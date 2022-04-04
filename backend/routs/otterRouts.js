@@ -1,27 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const {
-    getVancouver,
-    postVancouver,
     getAlaska,
     postAlaska,
-    getToba,
-    postToba,
     getSeattle,
     postSeattle,
+    getVancouver,
+    postVancouver,
+    getToba,
+    postToba,
 } = require("../controller/otterController");
 
-router.route("/vancouver").get(getVancouver).post(postVancouver);
-router.route("/alaska").get(getAlaska).post(postAlaska);
-router.route("/toba").get(getToba).post(postToba);
-router.route("/seattle").get(getSeattle).post(postSeattle);
-
-// router.get("/", getOtters);
-
-// router.post("/", postOtters);
-
-// router.get("/", (req, res) => {
-//     res.status(200).send("see otters");
-// });
+router.get("/alaska", getAlaska);
+router.post("/alaska", postAlaska);
+router.get("/seattle", getSeattle);
+router.post("/seattle", postSeattle);
+router.get("/vancouver", getVancouver);
+router.post("/vancouver", postVancouver);
+router.get("/toba", getToba);
+router.post("/toba", postToba);
 
 module.exports = router;

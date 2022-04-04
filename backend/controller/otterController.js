@@ -1,18 +1,27 @@
-const Otter = require("../models/otterModel");
+const Otter = require("../models/Alaska");
+const Toba = require("../models/Toba.js");
+const Vancouver = require("../models/Vancouver.js");
+const Alaska = require("../models/Alaska.js");
+const Seattle = require("../models/Seattle");
 
 /** Vancouver ******************************* */
 const getVancouver = (req, res) => {
-    res.status(200).send("see vanaqua");
+    Vancouver.find({})
+        .exec()
+        .then((results) => {
+            res.status(200).json(results);
+        })
+        .catch((error) => res.status(500).send(error));
 };
 
 const postVancouver = (req, res) => {
-    let vancouver = new Otter(req.body);
+    let vancouver = new Vancouver(req.body);
     vancouver
         .save()
         .then((result) => {
             res.status(200).json({
                 data: vancouver,
-                url: "api/otters/vancouver",
+                url: "/api/vancouver",
             });
         })
         .catch((error) => {
@@ -27,17 +36,43 @@ const getAlaska = (req, res) => {
 };
 
 const postAlaska = (req, res) => {
-    res.status(200).send("post alaska");
+    let alaska = new Alaska(req.body);
+    alaska
+        .save()
+        .then((result) => {
+            res.status(200).json({
+                data: alaska,
+                url: "/api/alaska",
+            });
+        })
+        .catch((error) => {
+            res.status(500).send(error);
+        });
 };
 /******************************************** */
 
 /** Toba ******************************* */
 const getToba = (req, res) => {
-    res.status(200).send("see Toba");
+    Toba.find({})
+        .exec()
+        .then((results) => {
+            res.status(200).json(results);
+        })
+        .catch((error) => res.status(500).send(error));
 };
 
 const postToba = (req, res) => {
-    res.status(200).send("post Toba");
+    let toba = new Toba(req.body);
+    toba.save()
+        .then((result) => {
+            res.status(200).json({
+                data: toba,
+                url: "/api/toba",
+            });
+        })
+        .catch((error) => {
+            res.status(500).send(error);
+        });
 };
 /******************************************** */
 
@@ -47,7 +82,18 @@ const getSeattle = (req, res) => {
 };
 
 const postSeattle = (req, res) => {
-    res.status(200).send("post Seattle");
+    let seattle = new Seattle(req.body);
+    seattle
+        .save()
+        .then((result) => {
+            res.status(200).json({
+                data: seattle,
+                url: "/api/seattle",
+            });
+        })
+        .catch((error) => {
+            res.status(500).send(error);
+        });
 };
 /******************************************** */
 
