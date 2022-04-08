@@ -2,8 +2,9 @@ import React, { useState } from "react";
 
 import Vancouver from "./components/Vancouver";
 import Seattle from "./components/Seattle";
-import Alaska from "./components/Alaska";
+import Birmingham from "./components/Birmingham";
 import Toba from "./components/Toba";
+import axios from "axios";
 
 function App() {
     const [aqua, setAqua] = useState();
@@ -13,19 +14,35 @@ function App() {
         console.log(aqua);
     };
 
+    const [otters, setOtters] = useState();
+
+    const loadVan = (e) => {
+        e.preventDefault();
+        axios
+            .get(`http://localhost:5000/api/${aqua}`)
+            .then((result) => {
+                if (result) {
+                    setOtters(result.data);
+                    console.log(otters);
+                }
+            })
+
+            .catch((error) => console.log(error));
+    };
+
     let location;
     switch (aqua) {
-        case "van":
-            location = <Vancouver />;
+        case "vancouver":
+            location = <Vancouver otters={otters} setOtters={setOtters} />;
             break;
         case "seattle":
-            location = <Seattle />;
+            location = <Seattle otters={otters} setOtters={setOtters} />;
             break;
-        case "alaska":
-            location = <Alaska />;
+        case "birmingham":
+            location = <Birmingham otters={otters} setOtters={setOtters} />;
             break;
         case "toba":
-            location = <Toba />;
+            location = <Toba otters={otters} setOtters={setOtters} />;
     }
 
     return (
@@ -37,7 +54,7 @@ function App() {
                     <input
                         type="radio"
                         name="aqua"
-                        onChange={() => handleAquaChange("van")}
+                        onChange={() => handleAquaChange("vancouver")}
                     />
                 </label>
                 <label>
@@ -49,11 +66,11 @@ function App() {
                     />
                 </label>
                 <label>
-                    Alaska
+                    Birmingham
                     <input
                         type="radio"
                         name="aqua"
-                        onChange={() => handleAquaChange("alaska")}
+                        onChange={() => handleAquaChange("birmingham")}
                     />
                 </label>
                 <label>
@@ -64,7 +81,9 @@ function App() {
                         onChange={() => handleAquaChange("toba")}
                     />
                 </label>
-                <button type="submit">See Otters</button>
+                <button type="submit" onClick={(e) => loadVan(e)}>
+                    See Otters
+                </button>
             </form>
             {location}
         </>

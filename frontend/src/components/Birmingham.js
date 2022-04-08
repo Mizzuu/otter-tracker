@@ -1,9 +1,9 @@
 import React from "react";
 
-function Toba(props) {
+function Birmingham(props) {
     return (
         <>
-            <h2>Toba Aquarium</h2>
+            <h2>National SEA LIFE Centre Birmingham</h2>
             {props.otters ? (
                 <ul className="otter">
                     {props.otters.map((item) => (
@@ -17,10 +17,10 @@ function Toba(props) {
                     ))}
                 </ul>
             ) : (
-                <div>🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵</div>
+                <div>🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧</div>
             )}
         </>
     );
 }
 
-export default Toba;
+export default Birmingham;

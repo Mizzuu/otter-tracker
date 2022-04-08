@@ -6,7 +6,7 @@ const tobaSchema = new Schema({
     name: { type: String, required: true, maxLength: 30 },
     age: { type: Number },
     gender: { type: String, required: true },
-    description: { type: String, required: true, maxLength: 256 },
+    description: { type: String, required: true },
     img: { type: String, required: true },
 });
 

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const alaskaSchema = new Schema({
+const birminghamSchema = new Schema({
     name: { type: String, required: true, maxLength: 30 },
     age: { type: Number },
     gender: { type: String, required: true },
@@ -10,5 +10,5 @@ const alaskaSchema = new Schema({
     img: { type: String, required: true },
 });
 
-const Alaska = mongoose.model("Alaska", alaskaSchema);
-module.exports = Alaska;
+const Birmingham = mongoose.model("Birmingham", birminghamSchema);
+module.exports = Birmingham;

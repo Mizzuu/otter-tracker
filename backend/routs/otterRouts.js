@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const {
-    getAlaska,
-    postAlaska,
+    getBirmingham,
+    postBirmingham,
     getSeattle,
     postSeattle,
     getVancouver,
@@ -11,8 +11,8 @@ const {
     postToba,
 } = require("../controller/otterController");
 
-router.get("/alaska", getAlaska);
-router.post("/alaska", postAlaska);
+router.get("/birmingham", getBirmingham);
+router.post("/birmingham", postBirmingham);
 router.get("/seattle", getSeattle);
 router.post("/seattle", postSeattle);
 router.get("/vancouver", getVancouver);

@@ -1,7 +1,6 @@
-const Otter = require("../models/Alaska");
+const Birmingham = require("../models/Birmingham");
 const Toba = require("../models/Toba.js");
 const Vancouver = require("../models/Vancouver.js");
-const Alaska = require("../models/Alaska.js");
 const Seattle = require("../models/Seattle");
 
 /** Vancouver ******************************* */
@@ -9,6 +8,10 @@ const getVancouver = (req, res) => {
     Vancouver.find({})
         .exec()
         .then((results) => {
+            res.setHeader(
+                "Access-Control-Allow-Origin",
+                "http://localhost:3000"
+            );
             res.status(200).json(results);
         })
         .catch((error) => res.status(500).send(error));
@@ -30,19 +33,28 @@ const postVancouver = (req, res) => {
 };
 /******************************************** */
 
-/** Alaska ******************************* */
-const getAlaska = (req, res) => {
-    res.status(200).send("see alaska");
+/** Birmingham ******************************* */
+const getBirmingham = (req, res) => {
+    Birmingham.find({})
+        .exec()
+        .then((results) => {
+            res.setHeader(
+                "Access-Control-Allow-Origin",
+                "http://localhost:3000"
+            );
+            res.status(200).json(results);
+        })
+        .catch((error) => res.status(500).send(error));
 };
 
-const postAlaska = (req, res) => {
-    let alaska = new Alaska(req.body);
-    alaska
+const postBirmingham = (req, res) => {
+    let birmingham = new Birmingham(req.body);
+    birmingham
         .save()
         .then((result) => {
             res.status(200).json({
-                data: alaska,
-                url: "/api/alaska",
+                data: birmingham,
+                url: "/api/birmingham",
             });
         })
         .catch((error) => {
@@ -56,6 +68,10 @@ const getToba = (req, res) => {
     Toba.find({})
         .exec()
         .then((results) => {
+            res.setHeader(
+                "Access-Control-Allow-Origin",
+                "http://localhost:3000"
+            );
             res.status(200).json(results);
         })
         .catch((error) => res.status(500).send(error));
@@ -78,7 +94,16 @@ const postToba = (req, res) => {
 
 /** Seattle ******************************* */
 const getSeattle = (req, res) => {
-    res.status(200).send("see Seattle");
+    Seattle.find({})
+        .exec()
+        .then((results) => {
+            res.setHeader(
+                "Access-Control-Allow-Origin",
+                "http://localhost:3000"
+            );
+            res.status(200).json(results);
+        })
+        .catch((error) => res.status(500).send(error));
 };
 
 const postSeattle = (req, res) => {
@@ -100,8 +125,8 @@ const postSeattle = (req, res) => {
 module.exports = {
     getVancouver,
     postVancouver,
-    getAlaska,
-    postAlaska,
+    getBirmingham,
+    postBirmingham,
     getToba,
     postToba,
     getSeattle,

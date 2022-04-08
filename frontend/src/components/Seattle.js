@@ -1,7 +1,26 @@
 import React from "react";
 
-function Seattle() {
-    return <div>Seattle</div>;
+function Seattle(props) {
+    return (
+        <>
+            <h2>sea otters</h2>
+            {props.otters ? (
+                <ul className="otter">
+                    {props.otters.map((item) => (
+                        <li key={item.name}>
+                            <p>Name: {item.name}</p>
+                            <p>Age: {item.age}</p>
+                            <p>{item.gender}</p>
+                            <img src={item.img} alt={item.name} />
+                            <div>{item.description}</div>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <div>🦦🇺🇸🦦🇺🇸🦦🇺🇸🦦🇺🇸🦦🇺🇸🦦🇺🇸🦦🇺🇸🦦🇺🇸</div>
+            )}
+        </>
+    );
 }
 
 export default Seattle;
