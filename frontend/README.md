@@ -71,8 +71,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## To Run in Dependencies
 
-Run **npm run server** to run the server.
-Run **npm start** to run the app.
+Run **npm run backend** to run the server.
+Run **npm frontend** to run the app.
+
+## Link https://wmdd4936-mtohma00.herokuapp.com/
 
 ## Description
 

@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-// import { useForm } from "react-hook-form";
 import axios from "axios";
-
-// type FormData = {
-//     title: string
-// }
-
-// const {register, handleSubmit, errors, reset} = useForm<FormData>()
 
 function Collection() {
     const [aqua, setAqua] = useState();
@@ -52,6 +45,9 @@ function Collection() {
 
     const handleChange = (e) => {
         setAqua(e.target.value);
+    };
+
+    const handleOtterChange = (e) => {
         setChosenOtter(e.target.value);
     };
 
@@ -65,7 +61,7 @@ function Collection() {
                         Katmai
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="katmai"
                         />
@@ -74,7 +70,7 @@ function Collection() {
                         Mak
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="mak"
                         />
@@ -83,7 +79,7 @@ function Collection() {
                         Kunik
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="kunik"
                         />
@@ -92,7 +88,7 @@ function Collection() {
                         Rialto
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="rialto"
                         />
@@ -101,7 +97,7 @@ function Collection() {
                         Hardy
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="hardy"
                         />
@@ -110,7 +106,7 @@ function Collection() {
                         Tazlina
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="tazlina"
                         />
@@ -119,7 +115,7 @@ function Collection() {
                         Joey
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="joey"
                         />
@@ -128,7 +124,7 @@ function Collection() {
                         Quatse
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="quatse"
                         />
@@ -144,7 +140,7 @@ function Collection() {
                         Mishka
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="mishka"
                         />
@@ -153,7 +149,7 @@ function Collection() {
                         Sekiu
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="sekiu"
                         />
@@ -169,7 +165,7 @@ function Collection() {
                         Ola
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="ola"
                         />
@@ -178,7 +174,7 @@ function Collection() {
                         Ozzy
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="ozzy"
                         />
@@ -194,7 +190,7 @@ function Collection() {
                         Mei
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="mei"
                         />
@@ -203,7 +199,7 @@ function Collection() {
                         Kira
                         <input
                             type="radio"
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleOtterChange(e)}
                             name="chosenOtter"
                             value="kira"
                         />
@@ -221,7 +217,7 @@ function Collection() {
                 action="/collection"
                 method="post"
                 name="otter-collection"
-                onSubmit={postOtter}
+                onSubmit={(e) => postOtter(e)}
             >
                 <legend>Which Aquarium?</legend>
                 <label>
