@@ -13,4 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api", require("./routs/otterRouts"));
 
+app.use("/collection", require("./routs/collectionRouts"));
+
 app.listen(port, () => console.log(`server started on port ${port}`));

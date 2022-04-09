@@ -2,8 +2,8 @@ import React from "react";
 
 function Vancouver(props) {
     return (
-        <>
-            <h2>sea otters</h2>
+        <div className="otterList">
+            <h2>Vancouver Aquarium</h2>
             {props.otters ? (
                 <ul className="otter">
                     {props.otters.map((item) => (
@@ -19,7 +19,7 @@ function Vancouver(props) {
             ) : (
                 <div>🦦🇨🇦🦦🇨🇦🦦🇨🇦🦦🇨🇦🦦🇨🇦🦦🇨🇦🦦🇨🇦🦦🇨🇦</div>
             )}
-        </>
+        </div>
     );
 }
 

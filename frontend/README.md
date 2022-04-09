@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## To Run in Dependencies
+
+Run **npm run server** to run the server.
+Run **npm start** to run the app.
+
+## Description
+
+**Sea otter tracker** provides you with sea otter information living at 4 aquariums around the world. Users also can collect sea otter information into their book.

@@ -2,7 +2,7 @@ import React from "react";
 
 function Birmingham(props) {
     return (
-        <>
+        <div className="otterList">
             <h2>National SEA LIFE Centre Birmingham</h2>
             {props.otters ? (
                 <ul className="otter">
@@ -19,7 +19,7 @@ function Birmingham(props) {
             ) : (
                 <div>🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧🦦🇬🇧</div>
             )}
-        </>
+        </div>
     );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 function Toba(props) {
     return (
-        <>
+        <div className="otterList">
             <h2>Toba Aquarium</h2>
             {props.otters ? (
                 <ul className="otter">
@@ -19,7 +19,7 @@ function Toba(props) {
             ) : (
                 <div>🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵🦦🇯🇵</div>
             )}
-        </>
+        </div>
     );
 }
 
